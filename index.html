@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="tr" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Temel SEO Meta Etiketleri -->
+    <title>NevTech — Operasyonel Mükemmellik &amp; Dijital Tesis Yönetimi</title>
+    <meta name="description" content="NevTech (nevtech.com.tr); entegre tesis yönetimi (Soft FM), zaman-hareket etüdü, kalite denetimi, SLA takibi ve saha verimliliği için geliştirilen modern, mobil uyumlu web uygulamaları platformudur.">
+    <meta name="keywords" content="NevTech, nevtech.com.tr, tesis yönetimi, Soft FM, zaman hareket etüdü, Time and Motion, SLA takibi, kalite denetimi, Gemba, RCA, Kaizen, PWA, operasyonel mükemmellik">
+    <meta name="author" content="NevTech">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nevtech.com.tr/">
+
+    <!-- Open Graph / Sosyal Medya Meta Etiketleri -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:url" content="https://nevtech.com.tr/">
+    <meta property="og:site_name" content="NevTech">
+    <meta property="og:title" content="NevTech — Operasyonel Mükemmellik &amp; Dijital Tesis Yönetimi">
+    <meta property="og:description" content="Saha operasyonlarını veriye, veriyi performansa dönüştüren entegre tesis yönetimi, zaman-hareket etüdü ve SLA takip uygulamaları.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NevTech — Operasyonel Mükemmellik &amp; Dijital Tesis Yönetimi">
+    <meta name="twitter:description" content="Entegre tesis yönetimi, zaman-hareket etüdü, kalite denetimi ve SLA takibi için hızlı, mobil uyumlu web uygulamaları.">
+
+    <!-- Inline SVG Data URI Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%230EA5E9'/%3E%3Cstop offset='100%25' stop-color='%2310B981'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%230B1120'/%3E%3Cpath d='M18 46V18h7l14 19V18h7v28h-7L25 27v19h-7z' fill='url(%23g)'/%3E%3Ccircle cx='46' cy='18' r='3.5' fill='%2334D399'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Sayfa Yüklenmeden Önce Kayıtlı Tema Tercihini Uygula (FOUC Önleme) -->
+    <script>
+        (function () {
+            try {
+                const savedTheme = localStorage.getItem('nevtech-theme');
+                if (savedTheme === 'light') {
+                    document.documentElement.classList.remove('dark');
+                } else {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+
+    <!-- Tailwind CSS CDN & Özel Tema Konfigürasyonu -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        display: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            950: '#0B1120',
+                            900: '#0F172A',
+                            850: '#131D33',
+                        }
+                    },
+                    boxShadow: {
+                        'glow-sky': '0 0 40px -10px rgba(14, 165, 233, 0.35)',
+                        'glow-emerald': '0 0 30px -8px rgba(16, 185, 129, 0.35)',
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+
+<body class="bg-slate-50 text-slate-900 dark:bg-navy-950 dark:text-slate-100 font-sans antialiased selection:bg-sky-500/30 selection:text-sky-900 dark:selection:text-sky-200 transition-colors duration-300 overflow-x-hidden">
+
+    <!-- Arka Plan Dekoratif Ortam Işıkları (Etkileşimi Engellemez) -->
+    <div aria-hidden="true" class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[56rem] h-[28rem] rounded-full bg-gradient-to-tr from-sky-500/15 via-cyan-400/10 to-emerald-400/15 dark:from-sky-500/20 dark:via-cyan-500/10 dark:to-emerald-500/15 blur-3xl"></div>
+        <div class="absolute top-1/3 -right-40 w-[30rem] h-[30rem] rounded-full bg-sky-500/10 dark:bg-sky-600/10 blur-3xl"></div>
+        <div class="absolute bottom-0 -left-40 w-[28rem] h-[28rem] rounded-full bg-emerald-500/10 dark:bg-emerald-600/10 blur-3xl"></div>
+    </div>
+
+    <!-- =========================================================
+         1. STICKY GLASSMORPHIC NAVBAR
+    ========================================================== -->
+    <header id="navbar" class="sticky top-0 z-40 w-full border-b border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-navy-950/80 backdrop-blur-xl transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+
+                <!-- Marka Logosu & Wordmark -->
+                <a href="#" class="group flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded-xl p-1 -ml-1">
+                    <!-- NevTech Geometrik SVG Logo -->
+                    <div class="relative flex items-center justify-center w-10 h-10 rounded-xl bg-slate-900 dark:bg-slate-900 border border-slate-700/80 shadow-md group-hover:border-sky-400/70 transition-colors">
+                        <svg class="w-6 h-6" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="nevtech-logo-grad" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#38BDF8"/>
+                                    <stop offset="55%" stop-color="#0EA5E9"/>
+                                    <stop offset="100%" stop-color="#10B981"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M6 25V7H10.5L21.5 20.5V7H26V25H21.5L10.5 11.5V25H6Z" fill="url(#nevtech-logo-grad)"/>
+                            <circle cx="24" cy="7" r="2.5" fill="#34D399"/>
+                        </svg>
+                    </div>
+                    <div class="flex items-baseline">
+                        <span class="font-display font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">NevTech</span>
+                        <span class="font-mono text-xs font-medium text-sky-600 dark:text-sky-400 ml-0.5">.com.tr</span>
+                    </div>
+                </a>
+
+                <!-- Masaüstü Navigasyon Bağlantıları -->
+                <nav aria-label="Ana Menü" class="hidden md:flex items-center gap-1 lg:gap-2">
+                    <a href="#uygulamalar" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-colors">Uygulamalar</a>
+                    <a href="#cozumler" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-colors">Çözümler</a>
+                    <a href="#yaklasim" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-colors">Yaklaşım</a>
+                    <a href="#iletisim" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-colors">İletişim</a>
+                </nav>
+
+                <!-- Sağ Aksiyonlar: Tema Değiştirici, CTA ve Mobil Menü Butonu -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <!-- Aydınlık / Karanlık Tema Butonu -->
+                    <button id="theme-toggle" type="button" aria-label="Temayı değiştir" title="Aydınlık / Karanlık Tema" class="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:border-sky-300 dark:hover:border-sky-500/50 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500">
+                        <!-- Güneş İkonu (Dark moddayken görünür) -->
+                        <svg id="icon-sun" class="w-5 h-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                        <!-- Ay İkonu (Light moddayken görünür) -->
+                        <svg id="icon-moon" class="w-5 h-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                    </button>
+
+                    <!-- Masaüstü CTA Butonu: Time & Motion Pro -->
+                    <a href="https://timemotion.nevtech.com.tr" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-white rounded-xl bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-400 hover:to-cyan-400 shadow-lg shadow-sky-500/20 hover:shadow-sky-500/35 transition-all active:scale-[0.98]">
+                        <span>Time &amp; Motion Pro</span>
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+                        </svg>
+                    </a>
+
+                    <!-- Mobil Hamburger Menü Butonu -->
+                    <button id="mobile-menu-btn" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-200 hover:border-sky-400 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500">
+                        <svg id="menu-icon-open" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                        <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobil Açılır Menü Çekmecesi -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-navy-950/95 backdrop-blur-xl">
+            <div class="px-4 pt-3 pb-5 space-y-1.5">
+                <a href="#uygulamalar" class="mobile-nav-link block px-4 py-3 text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/80 rounded-xl transition-colors">Uygulamalar</a>
+                <a href="#cozumler" class="mobile-nav-link block px-4 py-3 text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/80 rounded-xl transition-colors">Çözümler</a>
+                <a href="#yaklasim" class="mobile-nav-link block px-4 py-3 text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/80 rounded-xl transition-colors">Yaklaşım</a>
+                <a href="#iletisim" class="mobile-nav-link block px-4 py-3 text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/80 rounded-xl transition-colors">İletişim</a>
+                <div class="pt-3 border-t border-slate-200 dark:border-slate-800">
+                    <a href="https://timemotion.nevtech.com.tr" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full px-4 py-3 text-sm font-semibold text-white rounded-xl bg-gradient-to-r from-sky-500 to-cyan-500 shadow-md">
+                        <span>Time &amp; Motion Pro'yu Aç</span>
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- =========================================================
+             2. HERO BÖLÜMÜ (SPLIT LAYOUT + CANLI KPI ÖNİZLEME)
+        ========================================================== -->
+        <section class="relative pt-12 pb-16 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-28">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+
+                    <!-- Sol Kolon: Mesaj ve Aksiyon Butonları -->
+                    <div class="lg:col-span-6 space-y-7 text-center lg:text-left">
+                        <!-- Nabız Efektli Rozet -->
+                        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 text-xs sm:text-sm font-medium">
+                            <span class="relative flex h-2.5 w-2.5">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                            </span>
+                            <span>Operasyonel Mükemmellik &amp; Dijital Tesis Yönetimi</span>
+                        </div>
+
+                        <!-- Ana Başlık -->
+                        <h1 class="font-display text-3xl sm:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12]">
+                            Saha Operasyonlarını <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-cyan-400 to-emerald-400">Veriye</span>, Veriyi <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400">Performansa</span> Dönüştürün
+                        </h1>
+
+                        <!-- Alt Başlık -->
+                        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                            Entegre tesis yönetimi, zaman-hareket etüdü, kalite denetimi ve SLA takibi için geliştirilen hızlı, mobil uyumlu web uygulamaları.
+                        </p>
+
+                        <!-- CTA Butonları -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+                            <a href="#uygulamalar" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-semibold text-white rounded-xl bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-400 hover:to-cyan-400 shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 transition-all active:scale-[0.98]">
+                                <span>Uygulamaları Keşfet</span>
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"/>
+                                </svg>
+                            </a>
+                            <a href="#iletisim" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-semibold text-slate-700 dark:text-slate-200 rounded-xl border border-slate-300 dark:border-slate-700 bg-white/80 dark:bg-slate-900/70 hover:border-sky-400 dark:hover:border-sky-500/60 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-all active:scale-[0.98]">
+                                <span>İletişime Geç</span>
+                                <svg class="w-4 h-4 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <!-- Güven & Mimari Özeti -->
+                        <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+                            <span class="inline-flex items-center gap-1.5">
+                                <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                Kurulumsuz Web / PWA
+                            </span>
+                            <span class="inline-flex items-center gap-1.5">
+                                <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                Çevrimdışı Saha Desteği
+                            </span>
+                            <span class="inline-flex items-center gap-1.5">
+                                <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                Anlık KPI &amp; SLA Takibi
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Kolon: İnteraktif Operasyonel Dashboard Önizleme Kartı -->
+                    <div class="lg:col-span-6">
+                        <div class="relative mx-auto max-w-xl lg:max-w-none">
+                            <!-- Kart Arkası Hafif Işık Efekti -->
+                            <div aria-hidden="true" class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-sky-500/25 via-cyan-400/15 to-emerald-500/25 blur-xl opacity-75 dark:opacity-100"></div>
+
+                            <!-- Ana Dashboard Önizleme Çerçevesi -->
+                            <div class="relative rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-navy-900/90 backdrop-blur-xl shadow-2xl overflow-hidden">
+                                <!-- Üst Pencere Çubuğu -->
+                                <div class="flex items-center justify-between px-4 sm:px-5 py-3.5 border-b border-slate-200/80 dark:border-slate-800/80 bg-slate-50/90 dark:bg-slate-900/70">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-rose-400/80"></span>
+                                        <span class="w-2.5 h-2.5 rounded-full bg-amber-400/80"></span>
+                                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/80"></span>
+                                        <span class="ml-2 font-mono text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">ops.nevtech.com.tr</span>
+                                    </div>
+                                    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                                        Canlı Operasyon Özeti
+                                    </div>
+                                </div>
+
+                                <!-- Dashboard İçerik Gövdesi -->
+                                <div class="p-4 sm:p-6 space-y-5">
+                                    <!-- 3 Temel KPI Kartı -->
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                        <!-- KPI 1: SLA Uyum Oranı -->
+                                        <div class="p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/70 dark:bg-navy-950/70">
+                                            <div class="flex items-center justify-between">
+                                                <span class="text-xs font-medium text-slate-500 dark:text-slate-400">SLA Uyum Oranı</span>
+                                                <span class="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded-md">+1.8%</span>
+                                            </div>
+                                            <div id="kpi-sla" class="mt-2 font-display text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">%98.4</div>
+                                            <div class="mt-2 w-full h-1.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                                                <div id="kpi-sla-bar" class="h-full rounded-full bg-gradient-to-r from-emerald-500 to-cyan-400 transition-all duration-500" style="width: 98.4%"></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- KPI 2: Aktif Saha Modülleri -->
+                                        <div class="p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/70 dark:bg-navy-950/70">
+                                            <div class="flex items-center justify-between">
+                                                <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Aktif Saha Modülü</span>
+                                                <span class="w-2 h-2 rounded-full bg-sky-500"></span>
+                                            </div>
+                                            <div class="mt-2 font-display text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">4</div>
+                                            <p class="mt-1.5 text-[11px] text-slate-500 dark:text-slate-400">Soft FM &amp; Etüt Ekosistemi</p>
+                                        </div>
+
+                                        <!-- KPI 3: Ortalama Denetim Süresi -->
+                                        <div class="p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/70 dark:bg-navy-950/70">
+                                            <div class="flex items-center justify-between">
+                                                <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Ort. Denetim Süresi</span>
+                                                <span class="text-[11px] font-semibold text-sky-600 dark:text-sky-400 bg-sky-500/10 px-1.5 py-0.5 rounded-md">-34%</span>
+                                            </div>
+                                            <div id="kpi-audit" class="mt-2 font-display text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">2.4 dk</div>
+                                            <p class="mt-1.5 text-[11px] text-slate-500 dark:text-slate-400">QR &amp; Mobil Kontrol</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Kaizen Aksiyon Takibi İnteraktif Grafik Paneli -->
+                                    <div class="p-4 rounded-xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/70 dark:bg-navy-950/70">
+                                        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                                            <div>
+                                                <h2 class="text-sm font-semibold text-slate-900 dark:text-white">Kaizen Aksiyon Takibi</h2>
+                                                <p id="chart-subtitle" class="text-xs text-slate-500 dark:text-slate-400">Son 7 günlük kapanan saha aksiyon oranı</p>
+                                            </div>
+                                            <!-- Dönem Değiştirici (Haftalık / Aylık) -->
+                                            <div class="inline-flex p-0.5 rounded-lg bg-slate-200/80 dark:bg-slate-800/90 text-xs font-medium">
+                                                <button type="button" data-chart-mode="weekly" class="chart-mode-btn px-2.5 py-1 rounded-md bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm transition-all">Haftalık</button>
+                                                <button type="button" data-chart-mode="monthly" class="chart-mode-btn px-2.5 py-1 rounded-md text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">Aylık</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Dinamik Çubuk Grafik + Sparkline Görünümü -->
+                                        <div id="kaizen-bars" class="grid grid-cols-7 gap-2 items-end h-32 pt-4">
+                                            <!-- JS tarafından doldurulur ve güncellenir -->
+                                        </div>
+                                    </div>
+
+                                    <!-- Alt Durum Satırı -->
+                                    <div class="flex flex-wrap items-center justify-between gap-2 pt-1 text-xs text-slate-500 dark:text-slate-400">
+                                        <div class="flex items-center gap-2">
+                                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 font-medium">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                                Time &amp; Motion Pro
+                                            </span>
+                                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 font-medium">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
+                                                QR Hijyen
+                                            </span>
+                                        </div>
+                                        <span class="font-mono text-[11px] text-emerald-600 dark:text-emerald-400">Senkronize • 0 ms</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             3. UYGULAMA EKOSİSTEMİ (SUBDOMAINS & MODULES SHOWCASE)
+        ========================================================== -->
+        <section id="uygulamalar" class="py-16 sm:py-24 scroll-mt-20 border-t border-slate-200/70 dark:border-slate-800/70">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Bölüm Başlığı ve Filtreler -->
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-12">
+                    <div class="max-w-2xl">
+                        <span class="text-xs font-bold uppercase tracking-widest text-sky-600 dark:text-sky-400">Uygulama Ekosistemi</span>
+                        <h2 class="mt-2 font-display text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                            Saha İhtiyaçlarına Özel Web Modülleri
+                        </h2>
+                        <p class="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-400">
+                            Her biri belirli bir operasyonel darboğazı çözmek üzere tasarlanan, tek tıkla erişilebilen hafif ve hızlı web uygulamaları.
+                        </p>
+                    </div>
+
+                    <!-- Kategori Filtre Pill Butonları -->
+                    <div role="tablist" aria-label="Uygulama Kategorileri" class="flex flex-wrap items-center gap-2">
+                        <button type="button" data-filter="all" class="filter-pill px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all bg-sky-500 text-white shadow-md shadow-sky-500/20">
+                            Tümü <span class="ml-1 opacity-80">(4)</span>
+                        </button>
+                        <button type="button" data-filter="yayinda" class="filter-pill px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all border border-slate-200 dark:border-slate-800 bg-white dark:bg-navy-900 text-slate-600 dark:text-slate-300 hover:border-sky-400">
+                            Yayında <span class="ml-1 opacity-70">(2)</span>
+                        </button>
+                        <button type="button" data-filter="operasyon" class="filter-pill px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all border border-slate-200 dark:border-slate-800 bg-white dark:bg-navy-900 text-slate-600 dark:text-slate-300 hover:border-sky-400">
+                            Operasyon <span class="ml-1 opacity-70">(3)</span>
+                        </button>
+                        <button type="button" data-filter="kalite" class="filter-pill px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all border border-slate-200 dark:border-slate-800 bg-white dark:bg-navy-900 text-slate-600 dark:text-slate-300 hover:border-sky-400">
+                            Kalite &amp; SLA <span class="ml-1 opacity-70">(2)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 4 İnteraktif Uygulama Kartı Izgarası -->
+                <div id="apps-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <!-- KART 1: Time & Motion Pro -->
+                    <article data-categories="yayinda operasyon" class="app-card group relative flex flex-col justify-between p-6 sm:p-7 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-navy-900/90 hover:border-sky-400/70 dark:hover:border-sky-500/60 shadow-sm hover:shadow-xl hover:shadow-sky-500/10 transition-all duration-300">
+                        <div>
+                            <div class="flex flex-wrap items-start justify-between gap-3 mb-5">
+                                <!-- Uygulama İkonu -->
+                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-500/15 to-emerald-500/15 border border-sky-500/25 flex items-center justify-center text-sky-600 dark:text-sky-400 group-hover:scale-105 transition-transform">
+                                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.9" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 2h4"/>
+                                    </svg>
+                                </div>
+                                <!-- Durum Rozeti: Yayında (Nabız Efektli Emerald) -->
+                                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30">
+                                    <span class="relative flex h-2 w-2">
+                                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                    </span>
+                                    Yayında
+                                </span>
+                            </div>
+
+                            <!-- Başlık & Alt Alan Adı -->
+                            <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                                Time &amp; Motion Pro
+                            </h3>
+                            <div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 font-mono text-xs text-sky-700 dark:text-sky-300">
+                                <svg class="w-3.5 h-3.5 opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582"/>
+                                </svg>
+                                timemotion.nevtech.com.tr
+                            </div>
+
+                            <p class="mt-4 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Saha süreçleri için hassas zaman ve hareket etüdü, iş ölçümü, norm kadro hesaplama ve verimlilik analizi platformu.
+                            </p>
+
+                            <!-- Etiketler -->
+                            <div class="mt-5 flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-[11px] font-medium rounded-lg bg-slate-100 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300">İş Ölçümü</span>
+                                <span class="px-2.5 py-1 text-[11px] font-medium rounded-lg bg-slate-100 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300">Norm Kadro</span>
+                                <span class="px-2.5 py-1 text-[11px] font-medium rounded-lg bg-slate-100 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300">Verimlilik Analizi</span>
+                            </div>
+                        </div>
+
+                        <!-- Aksiyon Butonları -->
+                        <div class="mt-6 pt-5 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-wrap items-center gap-3">
+                            <a href="https://timemotion.nevtech.com.tr" target="_blank" rel="noopener noreferrer" class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-white rounded-xl bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-400 hover:to-cyan-400 shadow-md shadow-sky-500/20 transition-all active:scale-[0.98]">
+                                <span>Uygulamayı Aç</span>
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+                                </svg>
+                            </a>
+                            <button type="button" data-modal-app="timemotion" class="open-modal-btn flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-sm font-semibold text-slate-700 dark:text-slate-200 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-sky-400 dark:hover:border-sky-500 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-colors">
+                                <span>Detaylar</span>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- KART 2: QR Hijyen & SLA Takip -->
+                    <article data-categories="kalite" class="app-card group relative flex flex-col justify-between p-6 sm:p-7 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-navy-900/90 hover:border-sky-400/70 dark:hover:border-sky-500/60 shadow-sm hover:shadow-xl hover:shadow-sky-500/10 transition-all duration-300">
+                        <div>
+                            <div class="flex flex-wrap items-start justify-between gap-3 mb-5">
+                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-500/15 to-blue-500/15 border border-cyan-500/25 flex items-center justify-center text-cyan-600 dark:text-cyan-400 group-hover:scale-105 transition-transform">
+                                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.9" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 14.625h2.25m2.25 0h1.125m-5.625 3.375h2.25m3.375 0h-1.125m-4.5 2.25h5.625"/>
+                                    </svg>
+                                </div>
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-500/30">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
+                                    Aktif Modül
+                                </span>
+                            </div>
+
+                            <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                                QR Hijyen &amp; SLA Takip
+                            </h3>
+                            <p class="mt-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                QR kod tabanlı WC ve alan temizlik takibi, anlık misafir geri bildirimi, SLA uyumu ve süpervizör kontrol sistemi.
+                            </p>
+
+                            <div class="mt-5 flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-[11px] font-medium rounded-lg bg-slate-100 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300">QR Kontrol</span>
+                                <span class="px-2.5 py-1 text-[11px] font-medium rounded-lg bg-slate-100 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300">Misafir Geri Bildirimi</span>
+                                <span class="px-2.5 py-1 text-[11px] font-medium rounded-lg bg-slate-100 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300">SLA Uyumu</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-5 border-t border-slate-200/80 dark:border-slate-800/80 flex items-center justify-between gap-3">
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Kalite &amp; SLA Modülü</span>
+                            <button type="button" data-modal-app="qr-hijyen" class="open-modal-btn inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-sm font-semibold text-slate-700 dark:text-slate-200 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-sky-400 dark:hover:border-sky-500 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-colors">
+                                <span>Detaylar</span>
+                                <svg class="w-4 h-4 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- KART 3: Gemba, RCA & Kaizen Merkezi -->
+                    <article data-categories="kalite operasyon" class="app-card group relative flex flex-col justify-between p-6 sm:p-7 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-navy-900/90 hover:border-sky-400/70 dark:hover:border-sky-500/60 shadow-sm hover:shadow-xl hover:shadow-sky-500/10 transition-all duration-300">
+                        <div>
+                            <div class="flex flex-wrap items-start justify-between gap-3 mb-5">
+                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500/15 to-sky-500/15 border border-indigo-500/25 flex items-center justify-center text-indigo-600 dark:text-indigo-400 group-hover:scale-105 transition-transform">
+                                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.9" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+                                    </svg>
+                                </div>
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-500/30">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
+                                    Aktif Modül
+                                </span>
+                            </div>
+
+                            <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                                Gemba, RCA &amp; Kaizen Merkezi
+                            </h3>
+                            <p class="mt-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Entegre tesis yönetimi için saha yürüyüşü (Gemba), kök neden analizi (RCA) ve sürekli iyileştirme (Kaizen) aksiyon takip platformu.
+                            </p>
+
+                            <div class="mt-5 flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-[11px] font-medium rounded-lg bg-slate-100 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300">Gemba Yürüyüşü</span>
+                                <span class="px-2.5 py-1 text-[11px] font-medium rounded-lg bg-slate-100 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300">5 Neden / RCA</span>
+                                <span class="px-2.5 py-1 text-[11px] font-medium rounded-lg bg-slate-100 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300">Kaizen Takip</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-5 border-t border-slate-200/80 dark:border-slate-800/80 flex items-center justify-between gap-3">
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Kalite &amp; Operasyon Modülü</span>
+                            <button type="button" data-modal-app="gemba-rca" class="open-modal-btn inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-sm font-semibold text-slate-700 dark:text-slate-200 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-sky-400 dark:hover:border-sky-500 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-colors">
+                                <span>Detaylar</span>
+                                <svg class="w-4 h-4 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- KART 4: Çalışma Takvimi PWA -->
+                    <article data-categories="yayinda operasyon" class="app-card group relative flex flex-col justify-between p-6 sm:p-7 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-navy-900/90 hover:border-sky-400/70 dark:hover:border-sky-500/60 shadow-sm hover:shadow-xl hover:shadow-sky-500/10 transition-all duration-300">
+                        <div>
+                            <div class="flex flex-wrap items-start justify-between gap-3 mb-5">
+                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500/15 to-teal-500/15 border border-emerald-500/25 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:scale-105 transition-transform">
+                                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.9" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/>
+                                    </svg>
+                                </div>
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                    PWA
+                                </span>
+                            </div>
+
+                            <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                                Çalışma Takvimi PWA
+                            </h3>
+                            <p class="mt-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Çevrimdışı (offline) çalışabilen, mobil öncelikli aylık vardiya, puantaj ve çalışma takvimi takip uygulaması.
+                            </p>
+
+                            <div class="mt-5 flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-[11px] font-medium rounded-lg bg-slate-100 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300">Offline-First</span>
+                                <span class="px-2.5 py-1 text-[11px] font-medium rounded-lg bg-slate-100 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300">Vardiya &amp; Puantaj</span>
+                                <span class="px-2.5 py-1 text-[11px] font-medium rounded-lg bg-slate-100 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300">Mobil Öncelikli</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-5 border-t border-slate-200/80 dark:border-slate-800/80 flex items-center justify-between gap-3">
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Yayında • Çevrimdışı PWA</span>
+                            <button type="button" data-modal-app="calisma-takvimi" class="open-modal-btn inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-sm font-semibold text-slate-700 dark:text-slate-200 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-sky-400 dark:hover:border-sky-500 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-colors">
+                                <span>Detaylar</span>
+                                <svg class="w-4 h-4 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             4. ODAK ALANLARI / ÇÖZÜMLER (CORE CAPABILITIES)
+        ========================================================== -->
+        <section id="cozumler" class="py-16 sm:py-24 scroll-mt-20 border-t border-slate-200/70 dark:border-slate-800/70 bg-slate-100/60 dark:bg-navy-900/40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+                    <span class="text-xs font-bold uppercase tracking-widest text-sky-600 dark:text-sky-400">Odak Alanları</span>
+                    <h2 class="mt-2 font-display text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                        Uçtan Uca Operasyonel Çözümler
+                    </h2>
+                    <p class="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-400">
+                        Tesis yönetimi ve saha hizmetlerinde görünürlük, standartlaşma ve ölçülebilir verimlilik sağlayan dört temel yetkinlik.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Çözüm 1 -->
+                    <div class="group p-6 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-navy-900/90 hover:border-sky-400/60 dark:hover:border-sky-500/50 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-lg">
+                        <div class="w-11 h-11 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-600 dark:text-sky-400 mb-5">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-slate-900 dark:text-white">Soft FM Dijitalizasyonu</h3>
+                        <p class="mt-2.5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Temizlik, atık yönetimi, çamaşırhane, güvenlik ve destek hizmetleri süreçlerinin uçtan uca dijital takibi.
+                        </p>
+                    </div>
+
+                    <!-- Çözüm 2 -->
+                    <div class="group p-6 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-navy-900/90 hover:border-emerald-400/60 dark:hover:border-emerald-500/50 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-lg">
+                        <div class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 mb-5">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-slate-900 dark:text-white">Kalite Denetimi &amp; SLA</h3>
+                        <p class="mt-2.5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Standartlara uyumun anlık ölçümü, şeffaf performans göstergeleri (KPI) ve yönetici panoları.
+                        </p>
+                    </div>
+
+                    <!-- Çözüm 3 -->
+                    <div class="group p-6 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-navy-900/90 hover:border-cyan-400/60 dark:hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-lg">
+                        <div class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-600 dark:text-cyan-400 mb-5">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-slate-900 dark:text-white">Süreç İyileştirme &amp; Analitik</h3>
+                        <p class="mt-2.5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Zaman-hareket etütleri, darboğaz tespiti, kök neden analizi ve sürdürülebilir verimlilik artışı.
+                        </p>
+                    </div>
+
+                    <!-- Çözüm 4 -->
+                    <div class="group p-6 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-navy-900/90 hover:border-indigo-400/60 dark:hover:border-indigo-500/50 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-lg">
+                        <div class="w-11 h-11 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-5">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-slate-900 dark:text-white">Hafif &amp; Çevrimdışı (PWA) Mimari</h3>
+                        <p class="mt-2.5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Mağaza kurulumu gerektirmeden her cihazda hızlı açılan, saha koşullarına uygun modern web uygulamaları.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             5. YAKLAŞIM & TEKNOLOJİ ŞERİDİ
+        ========================================================== -->
+        <section id="yaklasim" class="py-16 sm:py-24 scroll-mt-20 border-t border-slate-200/70 dark:border-slate-800/70">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-navy-900/80 p-6 sm:p-10 lg:p-12 shadow-sm">
+                    <!-- Başlık -->
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Operasyonel Yaklaşım</span>
+                            <h2 class="mt-2 font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                                Ölçülebilir Sürekli İyileştirme Döngüsü
+                            </h2>
+                        </div>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 max-w-md">
+                            Kağıt formlardan kurtulun; veriyi doğrudan sahada toplayın, gecikmeden karar alın.
+                        </p>
+                    </div>
+
+                    <!-- 3 Adımlı İş Akışı Şeridi -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+                        <!-- Adım 1 -->
+                        <div class="relative p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/80 dark:bg-navy-950/70">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-sky-500/15 text-sky-600 dark:text-sky-400 font-display font-extrabold text-sm border border-sky-500/25">01</span>
+                                <h3 class="font-display text-lg font-bold text-slate-900 dark:text-white">Sahada Ölçümle</h3>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Mobil cihazlar ve QR noktaları üzerinden zaman etüdü, hijyen kontrolü ve saha gözlemlerini kesintisiz kayıt altına alın.
+                            </p>
+                        </div>
+
+                        <!-- Adım 2 -->
+                        <div class="relative p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/80 dark:bg-navy-950/70">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 font-display font-extrabold text-sm border border-cyan-500/25">02</span>
+                                <h3 class="font-display text-lg font-bold text-slate-900 dark:text-white">Anlık Analiz Et</h3>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                SLA uyum oranlarını, norm kadro verimliliğini ve tekrarlayan kök nedenleri gerçek zamanlı panolarda görüntüleyin.
+                            </p>
+                        </div>
+
+                        <!-- Adım 3 -->
+                        <div class="relative p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/80 dark:bg-navy-950/70">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 font-display font-extrabold text-sm border border-emerald-500/25">03</span>
+                                <h3 class="font-display text-lg font-bold text-slate-900 dark:text-white">Sürekli İyileştir</h3>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Kaizen aksiyonlarını sorumlu ekiplere atayın, kapanış hızını takip edin ve hizmet kalitesini kalıcı olarak yükseltin.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Teknoloji & Standartlar Şeridi -->
+                    <div class="mt-8 pt-8 border-t border-slate-200/80 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Altyapı Standartları:</span>
+                        <div class="flex flex-wrap items-center gap-2.5">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border border-slate-200 dark:border-slate-700/80 bg-slate-100/80 dark:bg-slate-800/70 text-slate-700 dark:text-slate-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>PWA
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border border-slate-200 dark:border-slate-700/80 bg-slate-100/80 dark:bg-slate-800/70 text-slate-700 dark:text-slate-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Offline-First
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border border-slate-200 dark:border-slate-700/80 bg-slate-100/80 dark:bg-slate-800/70 text-slate-700 dark:text-slate-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>Gerçek Zamanlı Senkronizasyon
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border border-slate-200 dark:border-slate-700/80 bg-slate-100/80 dark:bg-slate-800/70 text-slate-700 dark:text-slate-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>Mobil Öncelikli
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border border-slate-200 dark:border-slate-700/80 bg-slate-100/80 dark:bg-slate-800/70 text-slate-700 dark:text-slate-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>QR Entegrasyonu
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             6. İLETİŞİM BÖLÜMÜ (CONTACT INFO + STATIC FORM)
+        ========================================================== -->
+        <section id="iletisim" class="py-16 sm:py-24 scroll-mt-20 border-t border-slate-200/70 dark:border-slate-800/70 bg-slate-100/60 dark:bg-navy-900/40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+
+                    <!-- Sol Kolon: İletişim Bilgileri -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-sky-600 dark:text-sky-400">İletişim</span>
+                            <h2 class="mt-2 font-display text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                                Operasyonunuzu Birlikte Dijitalleştirelim
+                            </h2>
+                            <p class="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Modüllerimiz hakkında demo talebi, özel proje geliştirme veya iş birliği için bize doğrudan ulaşabilirsiniz.
+                            </p>
+                        </div>
+
+                        <!-- İletişim Kartları -->
+                        <div class="space-y-3.5 pt-2">
+                            <!-- E-posta Kartı + Panoya Kopyala -->
+                            <div class="flex items-center justify-between gap-3 p-4 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-navy-900/90">
+                                <div class="flex items-center gap-3.5 min-w-0">
+                                    <div class="w-11 h-11 shrink-0 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-600 dark:text-sky-400">
+                                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.9" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+                                        </svg>
+                                    </div>
+                                    <div class="min-w-0">
+                                        <p class="text-xs font-medium text-slate-500 dark:text-slate-400">E-posta</p>
+                                        <a href="mailto:info@nevtech.com.tr" class="block text-sm sm:text-base font-semibold text-slate-900 dark:text-white hover:text-sky-500 truncate">info@nevtech.com.tr</a>
+                                    </div>
+                                </div>
+                                <button id="copy-email-btn" type="button" aria-label="E-posta adresini kopyala" class="shrink-0 inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-sky-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184"/>
+                                    </svg>
+                                    <span>Kopyala</span>
+                                </button>
+                            </div>
+
+                            <!-- Web Adresi Kartı -->
+                            <div class="flex items-center gap-3.5 p-4 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-navy-900/90">
+                                <div class="w-11 h-11 shrink-0 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.9" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-medium text-slate-500 dark:text-slate-400">Platform</p>
+                                    <a href="https://nevtech.com.tr" class="text-sm sm:text-base font-semibold text-slate-900 dark:text-white hover:text-sky-500">nevtech.com.tr</a>
+                                </div>
+                            </div>
+
+                            <!-- Konum Kartı -->
+                            <div class="flex items-center gap-3.5 p-4 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-navy-900/90">
+                                <div class="w-11 h-11 shrink-0 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-600 dark:text-cyan-400">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.9" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-medium text-slate-500 dark:text-slate-400">Konum</p>
+                                    <p class="text-sm sm:text-base font-semibold text-slate-900 dark:text-white">Ankara, Türkiye</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Kolon: Statik / Formspree Uyumlu İletişim Formu -->
+                    <div class="lg:col-span-7">
+                        <div class="p-6 sm:p-8 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-navy-900/90 shadow-sm">
+                            <!--
+                                Not: Formspree entegrasyonu için form etiketine
+                                action="https://formspree.io/f/FORM_ID" method="POST"
+                                ekleyip aşağıdaki JS gönderim akışını fetch ile bağlayabilirsiniz.
+                            -->
+                            <form id="contact-form" novalidate class="space-y-5">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                    <div>
+                                        <label for="contact-name" class="block text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1.5">Ad Soyad</label>
+                                        <input id="contact-name" name="name" type="text" required autocomplete="name" placeholder="Örn. Ahmet Yılmaz" class="w-full px-4 py-3 text-sm rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-navy-950/80 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors">
+                                        <p id="error-name" class="hidden mt-1.5 text-xs text-rose-500 font-medium">Lütfen adınızı ve soyadınızı girin.</p>
+                                    </div>
+                                    <div>
+                                        <label for="contact-email" class="block text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1.5">E-posta</label>
+                                        <input id="contact-email" name="email" type="email" required autocomplete="email" placeholder="ad.soyad@kurum.com" class="w-full px-4 py-3 text-sm rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-navy-950/80 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors">
+                                        <p id="error-email" class="hidden mt-1.5 text-xs text-rose-500 font-medium">Lütfen geçerli bir e-posta adresi girin.</p>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="contact-subject" class="block text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1.5">Konu</label>
+                                    <input id="contact-subject" name="subject" type="text" required placeholder="Örn. Time & Motion Pro veya QR Hijyen Modülü" class="w-full px-4 py-3 text-sm rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-navy-950/80 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors">
+                                    <p id="error-subject" class="hidden mt-1.5 text-xs text-rose-500 font-medium">Lütfen bir konu belirtin.</p>
+                                </div>
+
+                                <div>
+                                    <label for="contact-message" class="block text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1.5">Mesajınız</label>
+                                    <textarea id="contact-message" name="message" rows="4" required placeholder="Operasyonel ihtiyacınız veya merak ettiğiniz modül hakkında kısaca bilgi verin..." class="w-full px-4 py-3 text-sm rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-navy-950/80 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors resize-y"></textarea>
+                                    <p id="error-message" class="hidden mt-1.5 text-xs text-rose-500 font-medium">Lütfen en az 10 karakterlik bir mesaj yazın.</p>
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1">
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">
+                                        Mesajınız doğrudan <span class="font-medium text-slate-700 dark:text-slate-300">info@nevtech.com.tr</span> adresine yönlendirilir.
+                                    </p>
+                                    <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white rounded-xl bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-400 hover:to-cyan-400 shadow-lg shadow-sky-500/20 transition-all active:scale-[0.98]">
+                                        <span>Mesajı Gönder</span>
+                                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </form>
+
+                            <!-- Form Başarı Geri Bildirim Ekranı -->
+                            <div id="contact-success" class="hidden text-center py-8 space-y-4">
+                                <div class="mx-auto w-14 h-14 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-500">
+                                    <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+                                    </svg>
+                                </div>
+                                <div class="space-y-1.5">
+                                    <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white">Mesajınız Hazırlandı!</h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 max-w-md mx-auto">
+                                        Talebiniz doğrulandı. E-posta istemciniz üzerinden doğrudan gönderebilir veya yeni bir mesaj oluşturabilirsiniz.
+                                    </p>
+                                </div>
+                                <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+                                    <a id="mailto-fallback-link" href="mailto:info@nevtech.com.tr" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 shadow-md transition-all">
+                                        <span>E-posta Uygulamasında Aç</span>
+                                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+                                        </svg>
+                                    </a>
+                                    <button id="contact-reset-btn" type="button" class="px-5 py-2.5 text-sm font-semibold text-slate-700 dark:text-slate-200 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-sky-400 transition-colors">
+                                        Yeni Mesaj Yaz
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =========================================================
+         7. MINIMALIST FOOTER
+    ========================================================== -->
+    <footer class="border-t border-slate-200/80 dark:border-slate-800/80 bg-white dark:bg-navy-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Logo ve Slogan -->
+                <div class="flex items-center gap-3">
+                    <div class="flex items-center justify-center w-9 h-9 rounded-xl bg-slate-900 border border-slate-700/80">
+                        <svg class="w-5 h-5" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M6 25V7H10.5L21.5 20.5V7H26V25H21.5L10.5 11.5V25H6Z" fill="#38BDF8"/>
+                            <circle cx="24" cy="7" r="2.5" fill="#34D399"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="font-display font-bold text-base text-slate-900 dark:text-white">NevTech</span>
+                        <span class="font-mono text-xs text-sky-600 dark:text-sky-400">.com.tr</span>
+                    </div>
+                </div>
+
+                <!-- Hızlı Bağlantılar -->
+                <nav aria-label="Alt Menü" class="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
+                    <a href="#uygulamalar" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Uygulamalar</a>
+                    <a href="https://timemotion.nevtech.com.tr" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Time &amp; Motion Pro</a>
+                    <a href="#iletisim" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">İletişim</a>
+                </nav>
+
+                <!-- Telif Hakkı -->
+                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+                    &copy; 2026 NevTech. Tüm hakları saklıdır.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =========================================================
+         UYGULAMA DETAY MODALI (ERİŞİLEBİLİR DIALOG)
+    ========================================================== -->
+    <div id="app-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6">
+        <!-- Arka Plan Karartma (Backdrop) -->
+        <div id="modal-backdrop" class="fixed inset-0 bg-slate-950/75 backdrop-blur-sm transition-opacity"></div>
+
+        <!-- Modal Kartı -->
+        <div class="relative z-10 w-full max-w-xl rounded-2xl border border-slate-200 dark:border-slate-700/80 bg-white dark:bg-navy-900 shadow-2xl overflow-hidden">
+            <!-- Modal Üst Alan -->
+            <div class="flex items-start justify-between gap-4 p-6 pb-4 border-b border-slate-200/80 dark:border-slate-800">
+                <div>
+                    <div class="flex flex-wrap items-center gap-2 mb-2">
+                        <span id="modal-badge" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold"></span>
+                        <span id="modal-subdomain" class="hidden font-mono text-xs px-2.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-sky-600 dark:text-sky-300"></span>
+                    </div>
+                    <h3 id="modal-title" class="font-display text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white"></h3>
+                </div>
+                <button id="modal-close-btn" type="button" aria-label="Pencereyi kapat" class="p-2 rounded-xl text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Modal İçerik -->
+            <div class="p-6 space-y-5 max-h-[70vh] overflow-y-auto">
+                <p id="modal-description" class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+
+                <!-- Öne Çıkan Özellikler -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">Öne Çıkan Özellikler</h4>
+                    <ul id="modal-features" class="space-y-2.5">
+                        <!-- JS ile doldurulur -->
+                    </ul>
+                </div>
+
+                <!-- Teknik Özellikler -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">Teknik Mimari</h4>
+                    <div id="modal-specs" class="flex flex-wrap gap-2">
+                        <!-- JS ile doldurulur -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Alt Aksiyonlar -->
+            <div class="flex flex-wrap items-center justify-end gap-3 px-6 py-4 border-t border-slate-200/80 dark:border-slate-800 bg-slate-50/80 dark:bg-navy-950/60">
+                <button id="modal-secondary-close" type="button" class="px-4 py-2.5 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white rounded-xl transition-colors">
+                    Kapat
+                </button>
+                <a id="modal-primary-cta" href="#" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold text-white rounded-xl bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-400 hover:to-cyan-400 shadow-md shadow-sky-500/20 transition-all">
+                    <span id="modal-cta-label">Uygulamayı Aç</span>
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================
+         BİLDİRİM (TOAST) BİLEŞENİ
+    ========================================================== -->
+    <div id="toast" role="status" aria-live="polite" class="fixed bottom-5 right-5 z-50 hidden items-center gap-2.5 px-4 py-3 rounded-xl border border-emerald-500/30 bg-slate-900/95 dark:bg-slate-800/95 text-white text-sm font-medium shadow-xl backdrop-blur-md">
+        <span class="flex items-center justify-center w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+            </svg>
+        </span>
+        <span id="toast-message">Kopyalandı</span>
+    </div>
+
+    <!-- =========================================================
+         ETKİLEŞİM VE İŞ MANTIĞI (SAF JAVASCRIPT - SIFIR BAĞIMLILIK)
+    ========================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            /* ---------------------------------------------------------
+               1. TEMA DEĞİŞTİRİCİ (DARK / LIGHT MODE + LOCALSTORAGE)
+            ---------------------------------------------------------- */
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            themeToggleBtn.addEventListener('click', () => {
+                const isDark = document.documentElement.classList.toggle('dark');
+                try {
+                    localStorage.setItem('nevtech-theme', isDark ? 'dark' : 'light');
+                } catch (e) {
+                    // iFrame veya gizli mod kısıtlamalarında sessizce devam et
+                }
+            });
+
+            /* ---------------------------------------------------------
+               2. MOBİL MENÜ AÇ/KAPA YÖNETİMİ
+            ---------------------------------------------------------- */
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIconOpen = document.getElementById('menu-icon-open');
+            const menuIconClose = document.getElementById('menu-icon-close');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+            function setMobileMenuState(isOpen) {
+                mobileMenu.classList.toggle('hidden', !isOpen);
+                menuIconOpen.classList.toggle('hidden', isOpen);
+                menuIconClose.classList.toggle('hidden', !isOpen);
+                mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+            }
+
+            mobileMenuBtn.addEventListener('click', () => {
+                const isCurrentlyHidden = mobileMenu.classList.contains('hidden');
+                setMobileMenuState(isCurrentlyHidden);
+            });
+
+            mobileNavLinks.forEach((link) => {
+                link.addEventListener('click', () => setMobileMenuState(false));
+            });
+
+            /* ---------------------------------------------------------
+               3. HERO CANLI DASHBOARD İNTERAKTİF GRAFİK (KAİZEN)
+            ---------------------------------------------------------- */
+            const kaizenChartData = {
+                weekly: {
+                    subtitle: 'Son 7 günlük kapanan saha aksiyon oranı',
+                    sla: '%98.4',
+                    slaWidth: '98.4%',
+                    audit: '2.4 dk',
+                    items: [
+                        { label: 'Pzt', value: 78 },
+                        { label: 'Sal', value: 84 },
+                        { label: 'Çar', value: 72 },
+                        { label: 'Per', value: 91 },
+                        { label: 'Cum', value: 88 },
+                        { label: 'Cmt', value: 94 },
+                        { label: 'Paz', value: 97 }
+                    ]
+                },
+                monthly: {
+                    subtitle: 'Son 7 aylık ortalama Kaizen kapanış performansı',
+                    sla: '%99.1',
+                    slaWidth: '99.1%',
+                    audit: '2.1 dk',
+                    items: [
+                        { label: 'May', value: 68 },
+                        { label: 'Haz', value: 74 },
+                        { label: 'Tem', value: 81 },
+                        { label: 'Ağu', value: 85 },
+                        { label: 'Eyl', value: 89 },
+                        { label: 'Eki', value: 93 },
+                        { label: 'Kas', value: 96 }
+                    ]
+                }
+            };
+
+            const kaizenBarsEl = document.getElementById('kaizen-bars');
+            const chartSubtitleEl = document.getElementById('chart-subtitle');
+            const kpiSlaEl = document.getElementById('kpi-sla');
+            const kpiSlaBarEl = document.getElementById('kpi-sla-bar');
+            const kpiAuditEl = document.getElementById('kpi-audit');
+            const chartModeBtns = document.querySelectorAll('.chart-mode-btn');
+
+            function renderKaizenChart(mode) {
+                const dataset = kaizenChartData[mode] || kaizenChartData.weekly;
+                chartSubtitleEl.textContent = dataset.subtitle;
+                kpiSlaEl.textContent = dataset.sla;
+                kpiSlaBarEl.style.width = dataset.slaWidth;
+                kpiAuditEl.textContent = dataset.audit;
+
+                kaizenBarsEl.innerHTML = '';
+                dataset.items.forEach((item, idx) => {
+                    const isLatest = idx === dataset.items.length - 1;
+                    const barColor = isLatest
+                        ? 'from-emerald-500 to-cyan-400'
+                        : 'from-sky-500/80 to-cyan-400/80 group-hover:from-sky-400 group-hover:to-emerald-400';
+
+                    const col = document.createElement('div');
+                    col.className = 'group flex flex-col items-center justify-end h-full gap-1.5 cursor-default';
+                    col.innerHTML = `
+                        <span class="text-[10px] font-mono font-semibold text-slate-500 dark:text-slate-400 group-hover:text-sky-500 dark:group-hover:text-sky-300 transition-colors">%${item.value}</span>
+                        <div class="w-full max-w-[2.25rem] flex-1 flex items-end bg-slate-200/70 dark:bg-slate-800/70 rounded-lg overflow-hidden p-0.5">
+                            <div class="w-full rounded-md bg-gradient-to-t ${barColor} transition-all duration-500" style="height: ${item.value}%"></div>
+                        </div>
+                        <span class="text-[10px] font-medium text-slate-500 dark:text-slate-400">${item.label}</span>
+                    `;
+                    kaizenBarsEl.appendChild(col);
+                });
+            }
+
+            chartModeBtns.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const mode = btn.getAttribute('data-chart-mode');
+                    chartModeBtns.forEach((b) => {
+                        const active = b === btn;
+                        b.classList.toggle('bg-white', active);
+                        b.classList.toggle('dark:bg-slate-700', active);
+                        b.classList.toggle('text-slate-900', active);
+                        b.classList.toggle('dark:text-white', active);
+                        b.classList.toggle('shadow-sm', active);
+                        b.classList.toggle('text-slate-600', !active);
+                        b.classList.toggle('dark:text-slate-400', !active);
+                    });
+                    renderKaizenChart(mode);
+                });
+            });
+
+            // İlk yüklemede haftalık grafiği çiz
+            renderKaizenChart('weekly');
+
+            /* ---------------------------------------------------------
+               4. UYGULAMA KATEGORİ FİLTRELEME
+            ---------------------------------------------------------- */
+            const filterPills = document.querySelectorAll('.filter-pill');
+            const appCards = document.querySelectorAll('.app-card');
+
+            filterPills.forEach((pill) => {
+                pill.addEventListener('click', () => {
+                    const selected = pill.getAttribute('data-filter');
+
+                    // Aktif pil stillerini güncelle
+                    filterPills.forEach((btn) => {
+                        const isActive = btn === pill;
+                        btn.className = isActive
+                            ? 'filter-pill px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all bg-sky-500 text-white shadow-md shadow-sky-500/20'
+                            : 'filter-pill px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all border border-slate-200 dark:border-slate-800 bg-white dark:bg-navy-900 text-slate-600 dark:text-slate-300 hover:border-sky-400';
+                    });
+
+                    // Kart görünürlüğünü filtrele
+                    appCards.forEach((card) => {
+                        const categories = (card.getAttribute('data-categories') || '').split(' ');
+                        const shouldShow = selected === 'all' || categories.includes(selected);
+                        card.classList.toggle('hidden', !shouldShow);
+                    });
+                });
+            });
+
+            /* ---------------------------------------------------------
+               5. UYGULAMA DETAY MODALI (VERİ + ERİŞİLEBİLİRLİK)
+            ---------------------------------------------------------- */
+            const appsCatalog = {
+                'timemotion': {
+                    title: 'Time & Motion Pro',
+                    badgeText: 'Yayında',
+                    badgeClass: 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30',
+                    subdomain: 'timemotion.nevtech.com.tr',
+                    description: 'Saha operasyonları, tesis yönetimi ve üretim hatları için tasarlanan hassas zaman ve hareket etüdü platformu. Kronometre bazlı iş ölçümü, performans temposu, tolerans payları ve norm kadro hesaplamalarını saniyeler içinde raporlar.',
+                    features: [
+                        'Hassas tur/adım kronometresi ve hareket kırılımı kaydı',
+                        'Standart zaman, mola/tolerans faktörü ve norm kadro hesaplayıcı',
+                        'Anlık verimlilik darboğaz analizi ve dışa aktarılabilir raporlar',
+                        'Mobil ve tablet üzerinden tek elle hızlı saha veri girişi'
+                    ],
+                    specs: ['Yayında', 'Mobil Uyumlu', 'Hızlı Web Arayüzü', 'Anlık Hesaplama', 'Raporlama'],
+                    url: 'https://timemotion.nevtech.com.tr',
+                    ctaLabel: 'Uygulamayı Aç'
+                },
+                'qr-hijyen': {
+                    title: 'QR Hijyen & SLA Takip',
+                    badgeText: 'Aktif Modül',
+                    badgeClass: 'bg-sky-500/15 text-sky-700 dark:text-sky-300 border border-sky-500/30',
+                    subdomain: '',
+                    description: 'Hastane, AVM, kampüs ve plazalardaki WC ile ortak alan temizlik süreçlerini QR kod teknolojisiyle şeffaflaştıran, misafir geri bildirimlerini anlık SLA alarmlarına dönüştüren dijital kontrol sistemi.',
+                    features: [
+                        'Her mahal ve WC için benzersiz QR kod tarama ve zaman damgalı temizlik onayı',
+                        'Ziyaretçi ve kullanıcılar için uygulama gerektirmeyen anlık geri bildirim ekranı',
+                        'SLA yanıt süresi takibi ve süpervizör denetim onay akışı',
+                        'Bölge, vardiya ve personel bazlı hijyen skor kartları'
+                    ],
+                    specs: ['QR Entegrasyonu', 'Gerçek Zamanlı SLA', 'Mobil Öncelikli', 'Süpervizör Paneli'],
+                    url: null,
+                    ctaLabel: 'Demo & Bilgi Talep Et'
+                },
+                'gemba-rca': {
+                    title: 'Gemba, RCA & Kaizen Merkezi',
+                    badgeText: 'Aktif Modül',
+                    badgeClass: 'bg-sky-500/15 text-sky-700 dark:text-sky-300 border border-sky-500/30',
+                    subdomain: '',
+                    description: 'Entegre tesis yönetiminde saha bulgularını yapılandırılmış saha yürüyüşleri (Gemba) ile yakalayan, 5 Neden / Balık Kılçığı kök neden analizleri (RCA) yapan ve Kaizen iyileştirme aksiyonlarını takip eden yönetim merkezi.',
+                    features: [
+                        'Fotoğraflı ve lokasyon etiketli Gemba saha yürüyüşü bulgu kaydı',
+                        'Tekrarlayan uygunsuzluklar için yapılandırılmış Kök Neden Analizi (RCA)',
+                        'Sorumlu, termin ve öncelik bazlı Kaizen aksiyon takip panosu',
+                        'Kapanış oranı, geciken aksiyon ve iyileştirme etkisi göstergeleri'
+                    ],
+                    specs: ['Soft FM Uyumlu', 'PWA Hazır', 'KPI Panosu', 'Aksiyon Takibi', 'Mobil Uyumlu'],
+                    url: null,
+                    ctaLabel: 'Demo & Bilgi Talep Et'
+                },
+                'calisma-takvimi': {
+                    title: 'Çalışma Takvimi PWA',
+                    badgeText: 'PWA',
+                    badgeClass: 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30',
+                    subdomain: '',
+                    description: 'İnternet bağlantısının zayıf olduğu saha ortamlarında dahi kesintisiz çalışan, ana ekrana eklenebilir, mobil öncelikli aylık vardiya, mesai ve puantaj takip uygulaması.',
+                    features: [
+                        'Tam çevrimdışı (Offline-First) çalışma ve yerel veri saklama',
+                        'Aylık vardiya planı, fazla mesai, izin ve resmi tatil özeti',
+                        'Hızlı tek dokunuşla günlük puantaj işaretleme deneyimi',
+                        'Uygulama mağazasına ihtiyaç duymadan iOS & Android ana ekrana kurulum'
+                    ],
+                    specs: ['PWA', 'Offline Destek', 'Mobil Öncelikli', 'Sıfır Kurulum', 'Hafif Mimari'],
+                    url: null,
+                    ctaLabel: 'Bilgi Talep Et'
+                }
+            };
+
+            const modal = document.getElementById('app-modal');
+            const modalBackdrop = document.getElementById('modal-backdrop');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+            const modalSecondaryClose = document.getElementById('modal-secondary-close');
+            const modalTitle = document.getElementById('modal-title');
+            const modalBadge = document.getElementById('modal-badge');
+            const modalSubdomain = document.getElementById('modal-subdomain');
+            const modalDescription = document.getElementById('modal-description');
+            const modalFeatures = document.getElementById('modal-features');
+            const modalSpecs = document.getElementById('modal-specs');
+            const modalPrimaryCta = document.getElementById('modal-primary-cta');
+            const modalCtaLabel = document.getElementById('modal-cta-label');
+            const contactSubjectInput = document.getElementById('contact-subject');
+
+            let activeModalAppKey = null;
+
+            function openAppModal(appKey) {
+                const app = appsCatalog[appKey];
+                if (!app) return;
+
+                activeModalAppKey = appKey;
+                modalTitle.textContent = app.title;
+                modalBadge.textContent = app.badgeText;
+                modalBadge.className = `inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold ${app.badgeClass}`;
+
+                if (app.subdomain) {
+                    modalSubdomain.textContent = app.subdomain;
+                    modalSubdomain.classList.remove('hidden');
+                } else {
+                    modalSubdomain.classList.add('hidden');
+                }
+
+                modalDescription.textContent = app.description;
+
+                // Özellikler listesini oluştur
+                modalFeatures.innerHTML = '';
+                app.features.forEach((feat) => {
+                    const li = document.createElement('li');
+                    li.className = 'flex items-start gap-2.5 text-sm text-slate-700 dark:text-slate-300';
+                    li.innerHTML = `
+                        <svg class="w-4 h-4 mt-0.5 shrink-0 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+                        </svg>
+                        <span>${feat}</span>
+                    `;
+                    modalFeatures.appendChild(li);
+                });
+
+                // Teknik rozetleri oluştur
+                modalSpecs.innerHTML = '';
+                app.specs.forEach((spec) => {
+                    const span = document.createElement('span');
+                    span.className = 'px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200';
+                    span.textContent = spec;
+                    modalSpecs.appendChild(span);
+                });
+
+                // Birincil CTA yapılandırması (Harici link veya İletişim formu yönlendirmesi)
+                modalCtaLabel.textContent = app.ctaLabel;
+                if (app.url) {
+                    modalPrimaryCta.setAttribute('href', app.url);
+                    modalPrimaryCta.setAttribute('target', '_blank');
+                    modalPrimaryCta.setAttribute('rel', 'noopener noreferrer');
+                } else {
+                    modalPrimaryCta.setAttribute('href', '#iletisim');
+                    modalPrimaryCta.removeAttribute('target');
+                    modalPrimaryCta.removeAttribute('rel');
+                }
+
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.classList.add('overflow-hidden');
+                modalCloseBtn.focus();
+            }
+
+            function closeAppModal() {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            document.querySelectorAll('.open-modal-btn').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    openAppModal(btn.getAttribute('data-modal-app'));
+                });
+            });
+
+            // Modal içindeki "Demo / Bilgi Talep Et" tıklandığında konuyu otomatik doldur ve kapat
+            modalPrimaryCta.addEventListener('click', () => {
+                const app = appsCatalog[activeModalAppKey];
+                if (app && !app.url) {
+                    closeAppModal();
+                    if (contactSubjectInput) {
+                        contactSubjectInput.value = `${app.title} — Bilgi / Demo Talebi`;
+                    }
+                }
+            });
+
+            modalCloseBtn.addEventListener('click', closeAppModal);
+            modalSecondaryClose.addEventListener('click', closeAppModal);
+            modalBackdrop.addEventListener('click', closeAppModal);
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    closeAppModal();
+                }
+            });
+
+            /* ---------------------------------------------------------
+               6. TOAST BİLDİRİM VE E-POSTA KOPYALAMA
+            ---------------------------------------------------------- */
+            const toastEl = document.getElementById('toast');
+            const toastMessageEl = document.getElementById('toast-message');
+            let toastTimer = null;
+
+            function showToast(message) {
+                toastMessageEl.textContent = message;
+                toastEl.classList.remove('hidden');
+                toastEl.classList.add('flex');
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(() => {
+                    toastEl.classList.add('hidden');
+                    toastEl.classList.remove('flex');
+                }, 3000);
+            }
+
+            // iFrame kısıtlamalarında dahi güvenilir çalışan panoya kopyalama
+            function copyTextReliably(text) {
+                const tempInput = document.createElement('textarea');
+                tempInput.value = text;
+                tempInput.setAttribute('readonly', '');
+                tempInput.style.position = 'fixed';
+                tempInput.style.top = '-9999px';
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                tempInput.setSelectionRange(0, 99999);
+                let copied = false;
+                try {
+                    copied = document.execCommand('copy');
+                } catch (err) {
+                    copied = false;
+                }
+                document.body.removeChild(tempInput);
+                return copied;
+            }
+
+            const copyEmailBtn = document.getElementById('copy-email-btn');
+            copyEmailBtn.addEventListener('click', () => {
+                const email = 'info@nevtech.com.tr';
+                const ok = copyTextReliably(email);
+                if (ok) {
+                    showToast('info@nevtech.com.tr panoya kopyalandı.');
+                } else {
+                    showToast('E-posta adresi: info@nevtech.com.tr');
+                }
+            });
+
+            /* ---------------------------------------------------------
+               7. İLETİŞİM FORMU DOĞRULAMA & BAŞARI DURUMU
+            ---------------------------------------------------------- */
+            const contactForm = document.getElementById('contact-form');
+            const contactSuccess = document.getElementById('contact-success');
+            const contactResetBtn = document.getElementById('contact-reset-btn');
+            const mailtoFallbackLink = document.getElementById('mailto-fallback-link');
+
+            const fieldRefs = {
+                name: { input: document.getElementById('contact-name'), error: document.getElementById('error-name') },
+                email: { input: document.getElementById('contact-email'), error: document.getElementById('error-email') },
+                subject: { input: document.getElementById('contact-subject'), error: document.getElementById('error-subject') },
+                message: { input: document.getElementById('contact-message'), error: document.getElementById('error-message') }
+            };
+
+            function setFieldError(key, hasError) {
+                const { input, error } = fieldRefs[key];
+                error.classList.toggle('hidden', !hasError);
+                input.classList.toggle('border-rose-500', hasError);
+                input.classList.toggle('dark:border-rose-500', hasError);
+            }
+
+            Object.keys(fieldRefs).forEach((key) => {
+                fieldRefs[key].input.addEventListener('input', () => setFieldError(key, false));
+            });
+
+            contactForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const nameVal = fieldRefs.name.input.value.trim();
+                const emailVal = fieldRefs.email.input.value.trim();
+                const subjectVal = fieldRefs.subject.input.value.trim();
+                const messageVal = fieldRefs.message.input.value.trim();
+
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                const nameInvalid = nameVal.length < 2;
+                const emailInvalid = !emailRegex.test(emailVal);
+                const subjectInvalid = subjectVal.length < 3;
+                const messageInvalid = messageVal.length < 10;
+
+                setFieldError('name', nameInvalid);
+                setFieldError('email', emailInvalid);
+                setFieldError('subject', subjectInvalid);
+                setFieldError('message', messageInvalid);
+
+                if (nameInvalid || emailInvalid || subjectInvalid || messageInvalid) {
+                    showToast('Lütfen işaretli alanları kontrol edin.');
+                    return;
+                }
+
+                // Mailto bağlantısını form verileriyle hazırla
+                const mailBody = `Ad Soyad: ${nameVal}\nE-posta: ${emailVal}\n\nMesaj:\n${messageVal}`;
+                const mailtoUrl = `mailto:info@nevtech.com.tr?subject=${encodeURIComponent(subjectVal)}&body=${encodeURIComponent(mailBody)}`;
+                mailtoFallbackLink.setAttribute('href', mailtoUrl);
+
+                // Başarı durumuna geç
+                contactForm.classList.add('hidden');
+                contactSuccess.classList.remove('hidden');
+                showToast('Mesajınız gönderime hazır!');
+            });
+
+            contactResetBtn.addEventListener('click', () => {
+                contactForm.reset();
+                contactSuccess.classList.add('hidden');
+                contactForm.classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
